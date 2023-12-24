@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#My Projects">My Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello,It's Me</h3>
+            <h1>Sathvika Teja</h1>
+            <p>
+            <p>An aspirant soul trying to transform everyday ,
+                In the process called "searching the final destination" just trying to live and enjoy the present !!!
+            </p>
+            <div class="social-media">
+                <a href="#"><i class='bx bxl-facebook'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+            <a href="Sathvika resume updated.pdf" class="btn">Download </a>
+        </div>
+
+        <div class="home-img">
+            <img src="me2.png">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="tejuphoto.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">
+                About<span>Me</span>
+            </h2>
+            <p>
+
+                I am a passionate learner who loves to explore new things and places. I have a strong feeling for
+                travelling and am always seeking new experiences. Motivation is a key aspect of my personality, and I
+                constantly strive to keep myself inspired.
+
+                I completed my schooling at Kendriya Vidyalaya Picket, covering classes 1st through 12th. During this
+                time, I developed a deep love for mathematics. Subsequently, I pursued my undergraduate studies in B.Sc
+                Mathematics, Statistics, and Computer Science at Loyola Degree College in Hyderabad, Telangana.
+
+                Currently, I am pursuing my Master's at Christ University in Lavasa, Pune. One of my particular areas of
+                interest is web development.
+
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section class="My Projects" id="My Projects">
+        <h2 class="heading">My <span>Projects</span></h2>
+
+        <div class="projects-container">
+            <div class="projects-box">
+                <i class='bx bx-leaf'></i>
+                <h3>Plant disease detection</h3>
+                <p>Plant disease identification, tracking and forecasting for farmers.
+                    Its an application where farmers can photograph a diseased plant and get to know about the diagnosis
+                    of the plant
+                    which efficiently would help them to take precautions and treat the plants </p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+
+        <div class="projects-container">
+            <div class="projects-box">
+                <i class='bx bx-line-chart'></i>
+                <h3>EDA-Sports Management system of Christ</h3>
+                <p>Exploratory Data Analysis done using python programming and applied excel on the data collected on
+                    sports management of christ university
+                </p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading">
+            Contact<span> Me</span>
+        </h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+            </div>
+            <div class="input-box">
+                <input type="number" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+        <span id="msg"></span>
+    </section>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyiaGm57fFQyrODiSEQMH1ngT79X1HPVevG6osh-Zd1HYTyhpPWDFW8hfy7dQ5iobCN/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 2500)
+                    form.reset()
+
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+
+
+</body>
+
+</html>
